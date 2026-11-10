@@ -3,8 +3,8 @@
 // A chave abaixo é pública: quem protege os dados são as regras do banco (só a conta de admin altera).
 // Copie URL e KEY de CONFIG em ../script.js (SUPABASE_URL e SUPABASE_KEY): os dois arquivos usam o mesmo banco.
 const CFG = {
-  URL: "",
-  KEY: "",
+  URL: "https://cyvsqgxgtlqkjnauizkx.supabase.co",
+  KEY: "sb_publishable_5mn30FH4hv9iXPUvvoi-FA_Iq8U5Zpm",
   BUCKET: "products",
 };
 const SESSION_KEY = "emagrece-admin-session";

@@ -6,8 +6,8 @@ const CONFIG = {
   GROUP_LINK: "",
   // Banco de dados (Supabase). Enquanto SUPABASE_URL estiver vazio, o site mostra os produtos de exemplo abaixo.
   // A chave é pública por natureza: quem protege os dados são as regras do banco.
-  SUPABASE_URL: "",
-  SUPABASE_KEY: "",
+  SUPABASE_URL: "https://cyvsqgxgtlqkjnauizkx.supabase.co",
+  SUPABASE_KEY: "sb_publishable_5mn30FH4hv9iXPUvvoi-FA_Iq8U5Zpm",
 };
 
 // Só aparecem enquanto o banco não está configurado.
