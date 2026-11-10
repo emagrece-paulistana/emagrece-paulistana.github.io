@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | Emagrece Paulistana</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#073D24">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="bar">
+    <span class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="20" fill="#fff"/>
+        <path fill="#0E6B3C" d="M9 32C7.5 19 16 9 32 8c0 15-8 25-23 24z" transform="translate(7 7) scale(.65)"/>
+        <path d="M13 28c4-5 8-9 14-13" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__text"><span>Emagrece</span><strong>Paulistana</strong></span>
+    </span>
+    <button type="button" class="btn btn--ghost btn--sm" id="sair" hidden>Sair</button>
+  </header>
+
+  <main class="wrap">
+    <p id="carregando" role="status">Carregando...</p>
+
+    <section id="sem-banco" hidden>
+      <h1>Painel ainda não conectado</h1>
+      <p class="hint">O banco de dados do site ainda não foi configurado. Peça a quem montou o site para concluir a configuração (passo a passo no README do projeto).</p>
+    </section>
+
+    <section id="login" hidden aria-labelledby="login-titulo">
+      <h1 id="login-titulo">Entrar no painel</h1>
+      <p class="hint">Área só para a administração da Emagrece Paulistana.</p>
+      <form id="login-form" class="stack" autocomplete="on">
+        <label for="l-email">E-mail</label>
+        <input id="l-email" type="email" autocomplete="username" required>
+        <label for="l-senha">Senha</label>
+        <input id="l-senha" type="password" autocomplete="current-password" required>
+        <p class="erro" id="login-erro" role="alert"></p>
+        <button type="submit" class="btn" id="login-btn">Entrar</button>
+      </form>
+    </section>
+
+    <section id="painel" hidden>
+      <div class="tabs" role="tablist" aria-label="Áreas do painel">
+        <button type="button" role="tab" id="tab-produtos" aria-selected="true" aria-controls="aba-produtos">Produtos</button>
+        <button type="button" role="tab" id="tab-info" aria-selected="false" aria-controls="aba-info" tabindex="-1">Informações do site</button>
+      </div>
+
+      <div id="aba-produtos" role="tabpanel" aria-labelledby="tab-produtos">
+        <div class="head">
+          <h1>Produtos</h1>
+          <button type="button" class="btn" id="novo">Novo produto</button>
+        </div>
+        <p class="hint">A ordem desta lista é a ordem do site. Produto escondido não aparece para os clientes.</p>
+        <p class="msg" id="msg" role="status"></p>
+        <ol class="lista" id="lista"></ol>
+      </div>
+
+      <div id="aba-info" role="tabpanel" aria-labelledby="tab-info" hidden>
+        <h1>Informações do site</h1>
+        <p class="hint">Mudou aqui, muda no site na hora. Campo vazio volta ao texto padrão.</p>
+        <form id="info-form" class="stack" novalidate>
+          <label for="i-grupo">Link do grupo do WhatsApp</label>
+          <input id="i-grupo" type="url" inputmode="url" maxlength="300" placeholder="https://chat.whatsapp.com/...">
+          <p class="hint">Todos os botões do site levam para este link. No WhatsApp: abra o grupo, toque em "Convidar via link" e copie.</p>
+
+          <h2>Topo do site</h2>
+          <label for="i-titulo">Título</label>
+          <input id="i-titulo" maxlength="120">
+          <label for="i-texto">Texto abaixo do título</label>
+          <textarea id="i-texto" rows="3" maxlength="240"></textarea>
+
+          <div class="foto">
+            <div class="foto__box foto__box--capsula">
+              <img id="i-prev" alt="" hidden>
+              <span id="i-vazio">Sem foto</span>
+            </div>
+            <div class="foto__acoes">
+              <input id="i-foto" type="file" accept="image/*" class="visually-hidden">
+              <label class="btn btn--sm" for="i-foto">Escolher foto do topo</label>
+              <button type="button" class="btn btn--ghost-dark btn--sm" id="i-remover" hidden>Tirar foto</button>
+              <p class="hint">Aparece dentro da cápsula, em pé. Sem foto, fica o desenho padrão.</p>
+            </div>
+          </div>
+
+          <h2>Bloco do grupo</h2>
+          <label for="i-gtitulo">Título</label>
+          <input id="i-gtitulo" maxlength="120">
+          <label for="i-gtexto">Texto</label>
+          <textarea id="i-gtexto" rows="3" maxlength="240"></textarea>
+
+          <h2>Rodapé</h2>
+          <label for="i-insta">Instagram (sem o @)</label>
+          <input id="i-insta" maxlength="60" autocapitalize="none" placeholder="emagrecepaulistana">
+          <label for="i-rodape">Cidade, horário ou outro aviso</label>
+          <input id="i-rodape" maxlength="160">
+
+          <p class="erro" id="i-erro" role="alert"></p>
+          <p class="msg" id="i-msg" role="status"></p>
+          <button type="submit" class="btn" id="i-salvar">Salvar informações</button>
+        </form>
+      </div>
+
+      <p class="rodape"><a href="../">Ver o site</a></p>
+    </section>
+  </main>
+
+  <dialog id="dlg" aria-labelledby="dlg-titulo">
+    <form id="form" class="stack" novalidate>
+      <h2 id="dlg-titulo">Novo produto</h2>
+
+      <div class="foto">
+        <div class="foto__box">
+          <img id="f-prev" alt="" hidden>
+          <span id="f-vazio">Sem foto</span>
+        </div>
+        <div class="foto__acoes">
+          <input id="f-foto" type="file" accept="image/*" class="visually-hidden">
+          <label class="btn btn--sm" for="f-foto">Escolher foto</label>
+          <button type="button" class="btn btn--ghost-dark btn--sm" id="f-remover" hidden>Tirar foto</button>
+        </div>
+      </div>
+
+      <label for="f-nome">Nome do produto</label>
+      <input id="f-nome" maxlength="120" required>
+
+      <label for="f-desc">Descrição (opcional)</label>
+      <textarea id="f-desc" rows="3" maxlength="300"></textarea>
+
+      <div class="duas">
+        <div>
+          <label for="f-preco">Preço (R$)</label>
+          <input id="f-preco" inputmode="decimal" placeholder="Ex.: 270,00">
+        </div>
+        <div>
+          <label for="f-promo">Preço promocional (R$)</label>
+          <input id="f-promo" inputmode="decimal" placeholder="Ex.: 240,00">
+        </div>
+      </div>
+      <p class="hint">Sem preço, o cartão mostra "Consulte no grupo". Com promoção, o preço normal aparece riscado.</p>
+
+      <label class="check"><input id="f-ativo" type="checkbox" checked> Mostrar este produto no site</label>
+
+      <p class="erro" id="f-erro" role="alert"></p>
+      <div class="botoes">
+        <button type="button" class="btn btn--ghost-dark" id="f-cancelar">Cancelar</button>
+        <button type="submit" class="btn" id="f-salvar">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

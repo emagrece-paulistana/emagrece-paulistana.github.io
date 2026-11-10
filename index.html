@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emagrece Paulistana | Catálogo e grupo no WhatsApp</title>
+  <meta name="description" content="Catálogo da Emagrece Paulistana (Paulistana, PI). Veja os protocolos e peça pelo nosso grupo no WhatsApp, onde saem os valores e as novidades.">
+  <meta name="theme-color" content="#073D24">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Emagrece Paulistana">
+  <meta property="og:title" content="Emagrece Paulistana | Catálogo e grupo no WhatsApp">
+  <meta property="og:description" content="Veja o catálogo e peça pelo nosso grupo no WhatsApp.">
+  <meta property="og:url" content="https://emagrece-paulistana.github.io/">
+  <meta property="og:image" content="https://emagrece-paulistana.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Emagrece Paulistana",
+    "url": "https://emagrece-paulistana.github.io/",
+    "description": "Catálogo de protocolos e suplementos da Emagrece Paulistana, com valores e novidades no grupo do WhatsApp.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Paulistana", "addressRegion": "PI", "addressCountry": "BR" },
+    "sameAs": ["https://www.instagram.com/emagrecepaulistana"]
+  }
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="folha" viewBox="0 0 40 40"><path d="M9 32C7.5 19 16 9 32 8c0 15-8 25-23 24z"/></symbol>
+    <symbol id="zap" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.800-1.200A9.500 9.500 0 1 0 12 2.500zM6.800 12a1.200 1.200 0 1 0 2.400 0 1.200 1.200 0 1 0-2.400 0zm4 0a1.200 1.200 0 1 0 2.400 0 1.200 1.200 0 1 0-2.400 0zm4 0a1.200 1.200 0 1 0 2.400 0 1.200 1.200 0 1 0-2.400 0z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#catalogo">Pular para o catálogo</a>
+
+  <header class="top">
+    <a class="brand" href="#inicio">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="20" fill="#fff"/>
+        <use href="#folha" x="7" y="7" width="26" height="26" fill="#0E6B3C"/>
+        <path d="M13 28c4-5 8-9 14-13" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__text"><span>Emagrece</span><strong>Paulistana</strong></span>
+    </a>
+    <a class="btn btn--light btn--sm" data-group-link href="#grupo">Entrar no grupo</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero__in">
+        <div class="hero__copy">
+          <h1 data-s="hero_title">Seu emagrecimento, com acompanhamento de perto.</h1>
+          <p class="hero__lead" data-s="hero_text">Conheça os protocolos da Emagrece Paulistana e peça pelo grupo do WhatsApp, onde saem os valores e as novidades.</p>
+          <div class="hero__actions">
+            <a class="btn btn--light btn--xl" data-group-link href="#grupo">Entrar no grupo do WhatsApp</a>
+            <a class="btn btn--ghost btn--xl" href="#catalogo">Ver o catálogo</a>
+          </div>
+          <ul class="hero__facts">
+            <li>Acompanhamento durante todo o processo</li>
+            <li>Atendimento direto pelo WhatsApp</li>
+            <li>Valores e novidades primeiro no grupo</li>
+          </ul>
+        </div>
+
+        <div class="capsule" id="capsula" aria-hidden="true">
+          <div class="capsule__half capsule__half--top"></div>
+          <div class="capsule__half capsule__half--bottom"></div>
+          <svg class="capsule__seal" viewBox="0 0 40 40" focusable="false">
+            <circle cx="20" cy="20" r="20" fill="#fff"/>
+            <use href="#folha" x="7" y="7" width="26" height="26" fill="#0E6B3C"/>
+            <path d="M13 28c4-5 8-9 14-13" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo" aria-labelledby="catalogo-titulo">
+      <div class="wrap">
+        <div class="catalog__head">
+          <h2 id="catalogo-titulo">Catálogo</h2>
+          <p>Escolha o seu e peça pelo grupo do WhatsApp.</p>
+        </div>
+        <p class="catalog__status" id="status" role="status">Carregando o catálogo...</p>
+        <ul class="grid" id="produtos"></ul>
+        <noscript><p class="catalog__status">Ative o JavaScript do navegador para ver o catálogo.</p></noscript>
+      </div>
+    </section>
+
+    <section class="steps" aria-labelledby="passos-titulo">
+      <div class="wrap">
+        <h2 id="passos-titulo">Como pedir</h2>
+        <ol class="steps__list">
+          <li>
+            <span class="steps__n" aria-hidden="true">1</span>
+            <h3>Entre no grupo</h3>
+            <p>Toque em qualquer botão verde. O grupo abre direto no seu WhatsApp.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">2</span>
+            <h3>Escolha no catálogo</h3>
+            <p>Veja as opções acima e decida qual combina com o seu objetivo.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">3</span>
+            <h3>Fale com a equipe</h3>
+            <p>Mande o nome do produto no grupo e receba o atendimento pelo WhatsApp.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="vip" id="grupo">
+      <div class="wrap vip__in">
+        <h2 data-s="group_title">Valores e novidades saem primeiro no grupo.</h2>
+        <p data-s="group_text">Entre no grupo, escolha o produto do catálogo e fale direto com a equipe pelo WhatsApp.</p>
+        <a class="btn btn--light btn--xl" data-group-link href="#grupo">
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+          Entrar no grupo do WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <a class="brand brand--dark" href="#inicio">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="20" fill="#0E6B3C"/>
+          <use href="#folha" x="7" y="7" width="26" height="26" fill="#fff"/>
+          <path d="M13 28c4-5 8-9 14-13" stroke="#0E6B3C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__text"><span>Emagrece</span><strong>Paulistana</strong></span>
+      </a>
+      <p class="foot__note" data-s="footer_note">Paulistana, PI.</p>
+      <p><a id="instagram" href="https://www.instagram.com/emagrecepaulistana" target="_blank" rel="noopener">Instagram @emagrecepaulistana</a></p>
+      <p class="foot__legal">Suplemento alimentar não é medicamento e não substitui uma alimentação equilibrada. Em caso de dúvida, procure um profissional de saúde.</p>
+      <p class="foot__legal">&copy; 2026 Emagrece Paulistana. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="float" id="flutuante" data-group-link href="#grupo">
+    <svg class="ico" aria-hidden="true" focusable="false"><use href="#zap"/></svg>
+    Entrar no grupo do WhatsApp
+  </a>
+
+  <div class="toast" role="status" hidden></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
